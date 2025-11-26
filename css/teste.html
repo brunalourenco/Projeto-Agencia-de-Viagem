@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Viagens</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+
+      /* Colunas 50% */
+      .col {
+        flex: 1;
+        height: 100%;
+      }
+
+      /* Coluna da esquerda com imagem única */
+      .left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Coluna da direita com 4 imagens usando flexbox */
+      .right {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .right img {
+        width: 50%; /* duas imagens por linha */
+        height: 50%; /* cada uma ocupa metade da altura da coluna */
+        object-fit: cover;
+      }
+
+      /* Responsivo */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .col {
+          width: 100%;
+          height: 50vh;
+        }
+
+        .right img {
+          height: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Coluna 1 - Imagem única -->
+      <div class="col left">
+        <img
+          src="https://picsum.photos/900/900?random=1"
+          alt="Paisagem de viagem"
+        />
+      </div>
+
+      <!-- Coluna 2 - 4 Imagens com Flexbox -->
+      <div class="col right">
+        <img src="https://picsum.photos/500/500?random=2" alt="" />
+        <img src="https://picsum.photos/500/500?random=3" alt="" />
+        <img src="https://picsum.photos/500/500?random=4" alt="" />
+        <img src="https://picsum.photos/500/500?random=5" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
